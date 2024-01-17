@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="parentdiv">
+    <h3>Reciept Maker 2.0</h3>
+    <div class="childiv">
+      <input id="businessName" type="text" placeholder="Name of Business"><br>
+      <input id="item" type="text" placeholder="Item bought"><br>
+      <input id="price" type="text" placeholder="Price of item"><br>
+      <input id="customer" type="text" placeholder="Customer's name"><br>
+      <input id="payment" type="text" placeholder="Payment type"><br>
+      <input id="namee" type="text" placeholder="Account name"><br>
+      <input id="Account" type="text" placeholder="Account number"><br>
+      <input id="phone" type="text" placeholder="Customer's Phone No"><br>
+      <input id="date" type="datetime-local" placeholder="Date/Time"><br>
+      <input id="newly" type="text" placeholder="New or Used">
+      <!-- <input id="fill" type="file"> -->
+    </div>
+    <button onclick="submit()">
+      Print
+    </button>
+  </div>
+  <div id="shw1"></div>
+
+  <script>
+    function submit() {
+      if (businessName.value == "" || item.value == "" || price.value == "" || customer.value == "" || payment.value == "" || phone.value == "" || date.value == "" || newly.value == ""||namee.value==""||Account.value=="") {
+        alert('Please fill out this field')
+      }
+      else {
+
+ let show =  shw1.innerHTML = `
+    <div id="show" style="background:black;margin-top:1pc; color: white;">
+      <h2>Reciept Maker 2.0</h2>
+    <h1 class="word">${businessName.value}</h1>
+    <h2 class="word">${item.value}</h2>
+    <h2 class="word">${price.value}</h2>
+
+    <span class="word" style="text-align:center">Sold to: Mr/Mrs: ${customer.value}</span>
+    
+
+    <h2 class="word">${payment.value}</h2>
+    <h2 class="word">${phone.value}</h2>
+    <h2 class="word">${date.value}</h2>
+    <h2 class="word">${newly.value}</h2>
+    
+
+  </div>
+
+       `
+      
+       print(show.value)
+       
+      }
+
+    }
+  </script>
+
+</body>
+
+</html>
